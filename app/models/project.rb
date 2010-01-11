@@ -422,7 +422,7 @@ class Project
   
   def log_changeset(artifacts_directory, reasons)
     File.open(File.join(artifacts_directory, 'changeset.log'), 'w') do |f|
-      reasons.each { |reason| f << reason.to_s << "\n" }
+      reasons.flatten.each { |reason| f << reason.to_s << "\n" }
     end
   end
 
